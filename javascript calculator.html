@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="hesapla.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Mini Calculator</title>
+</head>
+<style>
+body {
+    font: normal 67% Verdana, lucida, 'lucida grande' , arial, helvetica, sans-serif;
+    background-color: #fff;
+    margin: 5px;
+    padding: 25;
+}
+.formButton {
+    font-size: large;s
+    border-bottom: 2px solid tomato;
+    border-top: 2px solid blue;
+    border-right: 2px solid tomato;
+    border-left: 2px solid blue;
+    width: 55px;
+    height: 33px;
+    margin-bottom: 4px;
+    border-radius: 35px;
+    outline: none;
+    text-align: center;
+}
+.FormText {
+    font: normal 1.0em verdana, helvetica, arial, sans-serif;
+    border-top: 2px solid #707070;
+    border-bottom: 2px solid white;
+    background:#f1facb;
+    border-radius:5px;
+    padding-bottom: 25px;
+    outline: none;
+}
+.CalcBody {
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+.CalcCell {
+    background-color: #c7cac4;
+    border-radius: 25px;
+    border: 1px solid #5d6058;
+}
+.CalcDisplay {
+    background-color: #ebede8;
+    text-align: center;
+    padding-bottom:28px;
+    padding-top: 8px;
+    border-radius: 25px;
+    border: 1px solid #5d6058;
+boder-bottom: red;
+}
+td {
+    text-align: left;
+}
+input {
+    text-align: right;
+}
+      </style>
+          <body>
+    <form name="Calc">
+        <table align="center" cellpadding="10" cellspacing="0" class="CalcBody">
+            <tr>
+                <td class="CalcDisplay">
+                    <input type="memo" name="Input" size="24" class="FormText" cols="1">
+                </td>
+            </tr>
+            <tr>
+                <td class="CalcCell">
+                    <input type="button" name="one" value="1" onclick="Calc.Input.value += '1'" class="formButton">
+                    <input type="button" name="two" value="2" onclick="Calc.Input.value += '2'" class="formButton">
+                    <input type="button" name="three" value="3" onclick="Calc.Input.value += '3'" class="formButton">
+                    <input type="button" name="plus" value=" + " onclick="Calc.Input.value += ' + '" class="formButton">
+                    <br>
+                    <input type="button" name="four" value="4" onclick="Calc.Input.value += '4'" class="formButton">
+                    <input type="button" name="five" value="5" onclick="Calc.Input.value += '5'" class="formButton">
+                    <input type="button" name="six" value="6" onclick="Calc.Input.value += '6'" class="formButton">
+                    <input type="button" name="minus" value=" - " onclick="Calc.Input.value += ' - '" class="formButton">
+                    <br>
+                    <input type="button" name="seven" value="7" onclick="Calc.Input.value += '7'" class="formButton">
+                    <input type="button" name="eight" value="8" onclick="Calc.Input.value += '8'" class="formButton">
+                    <input type="button" name="nine" value="9" onclick="Calc.Input.value += '9'" class="formButton">
+                    <input type="button" name="times" value=" x " onclick="Calc.Input.value += ' * '" class="formButton">
+                    <br>
+                    <input type="button" name="clear" value="del" onclick="Calc.Input.value = ''" class="formButton">
+                    <input type="button" name="zero" value="0" onclick="Calc.Input.value += '0'" class="formButton">
+                    <input type="button" name="DoIt" value="=" onclick="Calc.Input.value = calcValue(document.Calc.Input.value)" class="formButton">
+                    <input type="button" name="div" value=" / " onclick="Calc.Input.value += ' / '" class="formButton">
+                    <input type="button" name="dec" value="." onclick="Calc.Input.
+                     += '.'" class="formButton">
+                </td>
+            </tr>
+        </table>
+   <input type="hidden" value="<?php echo $_GET['frm']; ?>">
+        <input name="field" type="hidden" value="<?php echo $_GET['fld']; ?>">
+    </form>
+<script>
+function calcValue(value)
+{
+var x = eval(document.Calc.Input.value);
+var y = Math.round(x*10000)/100;
+return (x);
+}
+</script>
+</body>
+</html>
